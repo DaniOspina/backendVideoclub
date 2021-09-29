@@ -1,6 +1,6 @@
 import express from 'express';
 import morgan from 'morgan' //en consola que peticion, a donde la hice, cuanto demoro
-import allRoutes from './routes/'
+import allRoutes from './routes'
 
 //DOCUMENTATION
 
