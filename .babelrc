@@ -1,8 +1,0 @@
-{
-    "presets": [
-        "@babel/preset-env" //Leer el código y convertirlo
-    ],
-    "plugins": [
-        "@babel/plugin-transform-runtime"
-    ]
-}

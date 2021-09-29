@@ -1,6 +1,6 @@
 const express =require('express');
 const morgan =require  ('morgan') //en consola que peticion, a donde la hice, cuanto demoro
-const allRoutes =require ('./routes')
+const allRoutes =require ('./src/routes')
 
 //DOCUMENTATION
 
