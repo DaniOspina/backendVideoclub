@@ -1,14 +1,14 @@
-import {connect} from '../config/conexion'
+const {connect} =require ('../config/conexion')
 
 
 //traer arreglo y luego ya puedo jugar con el
-export const getMovies = async (req, res) => {
+const getMovies = async (req, res) => {
     const connection = await connect()
     const [rows] = await connection.query('SELECT * FROM movie')
     res.json(rows)
 }
 
-export const getMovie = async (req, res) => {
+const getMovie = async (req, res) => {
     const connection = await connect()
     const [rows] = await connection.query('SELECT * FROM movie WHERE mov_id = ?', [
         req.params.id
@@ -17,7 +17,7 @@ export const getMovie = async (req, res) => {
     else res.sendStatus(402) //no existe ... error
 }
 
-export const saveMovie = async (req, res) => {
+const saveMovie = async (req, res) => {
     console.log(req.body.mov_title)
     const connection = await connect()
     const [results] = await connection.query(
@@ -38,7 +38,7 @@ export const saveMovie = async (req, res) => {
 }
 
 
-export const updateMovie = async (req, res) => {
+const updateMovie = async (req, res) => {
     const connection = await connect()
     const results = await connection.query("UPDATE movie SET ? WHERE mov_id = ?", [
         req.body,
@@ -48,10 +48,18 @@ export const updateMovie = async (req, res) => {
     res.sendStatus(204);
 }
 
-export const deleteMovie = async (req, res) => {
+const deleteMovie = async (req, res) => {
     const connection = await connect()
     await connection.query('DELETE  FROM movie WHERE mov_id = ?', [
         req.params.id
     ])
     res.sendStatus(204);
 }
+
+module.exports = deleteMovie
+module.exports = updateMovie
+module.exports = saveMovie
+module.exports = getMovie
+module.exports = getMovies
+
+

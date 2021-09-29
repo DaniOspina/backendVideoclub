@@ -1,12 +1,17 @@
-import {Router} from 'express';
-import { deleteMovie, getMovie, 
+const {Router} =require ('express');
+const getMovies=require ('../controllers/index.js')
+const getMovie=require ('../controllers/index.js')
+const saveMovie=require ('../controllers/index.js')
+const updateMovie=require ('../controllers/index.js')
+const deleteMovie=require ('../controllers/index.js')
+
+/* const { deleteMovie, getMovie, 
             getMovies, saveMovie, 
             updateMovie } 
-        from '../controllers';
+        =require ('../controllers'); */
 
 
 const router = Router();
-
 
 //traer todas las peliculas
 router.get('/movies', getMovies);
@@ -23,4 +28,4 @@ router.put('/movies/:id', updateMovie);
 //borrar pelicula
 router.delete('/movies/:id', deleteMovie);
 
-export default router;
+module.exports=router;

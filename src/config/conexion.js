@@ -1,10 +1,10 @@
-import mysql from 'mysql2/promise'  //para trabajar con promesas sql2
-import {config} from './config'   //archivo config
+const mysql=require('mysql2/promise')  //para trabajar con promesas sql2
+const {config}=require('./config')   //archivo config
 
 
 //conection to SQL
 
-export const connect = async() => {
+const connect = async() => {
   try{
     return await mysql.createConnection(config)
   }
@@ -13,4 +13,5 @@ export const connect = async() => {
   }
 }
 
+module.exports = connect
 //try & catch manejo de errores
