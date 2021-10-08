@@ -3,9 +3,9 @@ const mysql = require('mysql')
 // Connect to DB data
 const connection = mysql.createPool({
   host: 'us-cdbr-east-04.cleardb.com',
-  user: 'b9c7a14a19a559',
-  password: '4878bc24',
-  database: 'heroku_e80dce80cfe2935'
+  user: 'bbe57833499def',
+  password: '674f257d',
+  database: 'heroku_1cb279cfe07419a'
 })
 
 connection.getConnection((err) => {
